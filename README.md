@@ -1,5 +1,6 @@
 # TypeSript-Pokedex
-Learning TypeScript by creating an application that calls an API and shows the results in the form of trading cards.
+Learning TypeScript by creating an application that calls an API and shows the results in the form of trading cards.  
+**See the finished project** [here](https://robbiedv.github.io/TypeScript-Pokedex/)
 
 ### Learning Points
 * * *
