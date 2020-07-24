@@ -1,7 +1,7 @@
 const container: HTMLElement | any = document.getElementById('app')
-const pokemans: number = 10
+const pokemons: number = 10
 
-interface IPokeman {
+interface Ipokemon {
   id: number;
   name: string;
   image: string;
@@ -9,29 +9,29 @@ interface IPokeman {
 }
 
 const fetchData = (): void => {
-  for (let i = 1; i <= pokemans; i++) {
-    getPokeman(i)
+  for (let i = 1; i <= pokemons; i++) {
+    getpokemon(i)
   }
 }
 
-const getPokeman = async (id: number): Promise<void> => {
+const getpokemon = async (id: number): Promise<void> => {
   const data: Response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-  const pokeman: any = await data.json()
-  const pokemanType: string = pokeman.types
+  const pokemon: any = await data.json()
+  const pokemonType: string = pokemon.types
     .map((poke: any) => poke.type.name)
     .join(", ")
 
-  const transformedPokeman = {
-    id: pokeman.id,
-    name: pokeman.name,
-    image: `${pokeman.sprites.front_defualt}`,
-    type: pokemanType,
+  const transformedpokemon = {
+    id: pokemon.id,
+    name: pokemon.name,
+    image: `${pokemon.sprites.front_default}`,
+    type: pokemonType,
   }
 
-  showPokeman(transformedPokeman)
+  showpokemon(transformedpokemon)
 }
 
-const showPokeman = (pokemon: IPokeman): void => {
+const showpokemon = (pokemon: Ipokemon): void => {
   let output: string = `
       <div class="card">
         <span class="card--id">#${pokemon.id}</span>

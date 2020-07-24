@@ -9,27 +9,27 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const container = document.getElementById('app');
-const pokemans = 10;
+const pokemons = 10;
 const fetchData = () => {
-    for (let i = 1; i <= pokemans; i++) {
-        getPokeman(i);
+    for (let i = 1; i <= pokemons; i++) {
+        getpokemon(i);
     }
 };
-const getPokeman = (id) => __awaiter(void 0, void 0, void 0, function* () {
+const getpokemon = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const data = yield fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-    const pokeman = yield data.json();
-    const pokemanType = pokeman.types
+    const pokemon = yield data.json();
+    const pokemonType = pokemon.types
         .map((poke) => poke.type.name)
         .join(", ");
-    const transformedPokeman = {
-        id: pokeman.id,
-        name: pokeman.name,
-        image: `${pokeman.sprites.front_defualt}`,
-        type: pokemanType,
+    const transformedpokemon = {
+        id: pokemon.id,
+        name: pokemon.name,
+        image: `${pokemon.sprites.front_default}`,
+        type: pokemonType,
     };
-    showPokeman(transformedPokeman);
+    showpokemon(transformedpokemon);
 });
-const showPokeman = (pokemon) => {
+const showpokemon = (pokemon) => {
     let output = `
       <div class="card">
         <span class="card--id">#${pokemon.id}</span>
