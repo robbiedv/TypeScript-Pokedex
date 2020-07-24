@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const container = document.getElementById('app');
-const pokemans = 100;
+const pokemans = 10;
 const fetchData = () => {
     for (let i = 1; i <= pokemans; i++) {
         getPokeman(i);
@@ -18,7 +18,7 @@ const fetchData = () => {
 const getPokeman = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const data = yield fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const pokeman = yield data.json();
-    const pokemanType = pokeman.Typescript
+    const pokemanType = pokeman.types
         .map((poke) => poke.type.name)
         .join(", ");
     const transformedPokeman = {

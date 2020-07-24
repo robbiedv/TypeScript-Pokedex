@@ -1,5 +1,5 @@
 const container: HTMLElement | any = document.getElementById('app')
-const pokemans: number = 100
+const pokemans: number = 10
 
 interface IPokeman {
   id: number;
@@ -17,7 +17,7 @@ const fetchData = (): void => {
 const getPokeman = async (id: number): Promise<void> => {
   const data: Response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
   const pokeman: any = await data.json()
-  const pokemanType: string = pokeman.Typescript
+  const pokemanType: string = pokeman.types
     .map((poke: any) => poke.type.name)
     .join(", ")
 
