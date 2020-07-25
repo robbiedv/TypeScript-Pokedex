@@ -2,7 +2,7 @@
 Learning TypeScript by creating an application that calls an API and shows the results in the form of trading cards.  
 **See the finished project** [here](https://robbiedv.github.io/TypeScript-Pokedex/)
 
-### Learning Points
+### What I Learned
 * * *
 * TypeScript types and how they behave under certain conditions
 * Setting up a tsconfig.json file 
